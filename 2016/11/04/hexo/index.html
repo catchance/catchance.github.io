@@ -85,46 +85,16 @@
 
 
 
-<meta name="description" content="hexo
-安装
-环境
-Node.js
-git
-
-123456$ npm install hexo-cli -g #$ hexo init blog #$ cd blog #$ hexo server #$ hexo new &quot;Hello Hexo&quot; #$ hexo generate #
-部署
-Openshift
-openshift上面部署nodejs的环境
-安装 Hexo 的 Openshift">
+<meta name="description" content="hexo是一款基于Node.js的静态博客框架。本文主要内容包括：hexo的基本语法和使用技巧。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo基础知识">
 <meta property="og:url" content="http://tech.xchance.xyz/2016/11/04/hexo/index.html">
 <meta property="og:site_name" content="11110000">
-<meta property="og:description" content="hexo
-安装
-环境
-Node.js
-git
-
-123456$ npm install hexo-cli -g #$ hexo init blog #$ cd blog #$ hexo server #$ hexo new &quot;Hello Hexo&quot; #$ hexo generate #
-部署
-Openshift
-openshift上面部署nodejs的环境
-安装 Hexo 的 Openshift">
-<meta property="og:updated_time" content="2016-11-23T06:57:34.370Z">
+<meta property="og:description" content="hexo是一款基于Node.js的静态博客框架。本文主要内容包括：hexo的基本语法和使用技巧。">
+<meta property="og:updated_time" content="2016-11-29T03:50:20.930Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo基础知识">
-<meta name="twitter:description" content="hexo
-安装
-环境
-Node.js
-git
-
-123456$ npm install hexo-cli -g #$ hexo init blog #$ cd blog #$ hexo server #$ hexo new &quot;Hello Hexo&quot; #$ hexo generate #
-部署
-Openshift
-openshift上面部署nodejs的环境
-安装 Hexo 的 Openshift">
+<meta name="twitter:description" content="hexo是一款基于Node.js的静态博客框架。本文主要内容包括：hexo的基本语法和使用技巧。">
 
 
 
@@ -357,15 +327,24 @@ openshift上面部署nodejs的环境
       
 
       
-        <p><a href="https://www.npmjs.com/package/hexo" target="_blank" rel="external">hexo</a></p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><hr>
-<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><ul>
+        <blockquote>
+<p>hexo是一款基于Node.js的静态博客框架。<br>本文主要内容包括：hexo的基本语法和使用技巧。  </p>
+</blockquote>
+<a id="more"></a>
+<h3 id="相关文档"><a href="#相关文档" class="headerlink" title="相关文档"></a>相关文档</h3><hr>
+<ul>
+<li><a href="https://hexo.io" target="_blank" rel="external">hexo官网</a></li>
+<li><a href="https://www.npmjs.com/package/hexo" target="_blank" rel="external">Node.js &gt;&gt; hexo</a></li>
+<li><a href="https://github.com/hexojs/hexo" target="_blank" rel="external">Github &gt;&gt; hexo</a></li>
+</ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><hr>
+<h4 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h4><ul>
 <li>Node.js</li>
 <li>git</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-cli -g <span class="comment">#</span></div><div class="line">$ hexo init blog <span class="comment">#</span></div><div class="line">$ <span class="built_in">cd</span> blog <span class="comment">#</span></div><div class="line">$ hexo server <span class="comment">#</span></div><div class="line">$ hexo new <span class="string">"Hello Hexo"</span> <span class="comment">#</span></div><div class="line">$ hexo generate <span class="comment">#</span></div></pre></td></tr></table></figure>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><hr>
-<h3 id="Openshift"><a href="#Openshift" class="headerlink" title="Openshift"></a>Openshift</h3><ol>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><hr>
+<h4 id="Openshift"><a href="#Openshift" class="headerlink" title="Openshift"></a>Openshift</h4><ol>
 <li>openshift上面部署nodejs的环境</li>
 <li>安装 Hexo 的 Openshift 插件<br><code>$ npm install hexo-deployer-openshift --save</code></li>
 <li>编辑Hexo根目录 “_config.yml”的文件<blockquote>
@@ -375,7 +354,7 @@ openshift上面部署nodejs的环境
 <li>部署<br><code>$ hexo [d|deploy]</code></li>
 <li>yes</li>
 </ol>
-<h3 id="github"><a href="#github" class="headerlink" title="github"></a>github</h3><ol>
+<h4 id="github"><a href="#github" class="headerlink" title="github"></a>github</h4><ol>
 <li>github上面创建Pages repository</li>
 <li>编辑Hexo根目录”_config.yml”<blockquote>
 <p>deploy:<br>　　type: github<br>　　repository: <a href="https://github.com/catchance/catchance.github.com.git" target="_blank" rel="external">https://github.com/catchance/catchance.github.com.git</a><br>　　branch: master</p>
@@ -545,7 +524,7 @@ openshift上面部署nodejs的环境
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境"><span class="nav-number">1.1.</span> <span class="nav-text">环境</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署"><span class="nav-number">2.</span> <span class="nav-text">部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Openshift"><span class="nav-number">2.1.</span> <span class="nav-text">Openshift</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github"><span class="nav-number">2.2.</span> <span class="nav-text">github</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#相关文档"><span class="nav-number">1.</span> <span class="nav-text">相关文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#环境"><span class="nav-number">2.1.</span> <span class="nav-text">环境</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署"><span class="nav-number">3.</span> <span class="nav-text">部署</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Openshift"><span class="nav-number">3.1.</span> <span class="nav-text">Openshift</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#github"><span class="nav-number">3.2.</span> <span class="nav-text">github</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
