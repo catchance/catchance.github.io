@@ -1,0 +1,1315 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/css/index.css" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="mongodb," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="mongodb基础知识mongodb基础操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mongodb">
+<meta property="og:url" content="http://tech.xchance.xyz/2017/07/03/mongodb/index.html">
+<meta property="og:site_name" content="1010">
+<meta property="og:description" content="mongodb基础知识mongodb基础操作">
+<meta property="og:updated_time" content="2017-07-26T10:16:28.732Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mongodb">
+<meta name="twitter:description" content="mongodb基础知识mongodb基础操作">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"remove"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://tech.xchance.xyz/2017/07/03/mongodb/"/>
+
+
+  <title> mongodb | 1010 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+<!--
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">1010</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Talk is cheap,Show me the code!</p>
+-->
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-blog">
+          <a href="/list" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br />
+            
+            博客
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                mongodb
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-07-03T10:13:45+08:00" content="2017-07-03">
+              2017-07-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/mongodb/" itemprop="url" rel="index">
+                    <span itemprop="name">mongodb</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>mongodb基础知识<br>mongodb基础操作</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><hr>
+<p>MongoDB 是一个基于分布式文件存储的数据库。由 C++ 语言编写。<br>MongoDB 是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。</p>
+<h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><p><strong>MongoDB与SQL的相关概念对比</strong>  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">SQL术语/概念</th>
+<th style="text-align:center">MongoDB术语/概念</th>
+<th style="text-align:center">解释/说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">database</td>
+<td style="text-align:center">database</td>
+<td style="text-align:center">数据库</td>
+</tr>
+<tr>
+<td style="text-align:center">table</td>
+<td style="text-align:center">collection</td>
+<td style="text-align:center">数据库表/集合</td>
+</tr>
+<tr>
+<td style="text-align:center">row</td>
+<td style="text-align:center">document</td>
+<td style="text-align:center">数据记录行/文档</td>
+</tr>
+<tr>
+<td style="text-align:center">column</td>
+<td style="text-align:center">field</td>
+<td style="text-align:center">数据字段/域</td>
+</tr>
+<tr>
+<td style="text-align:center">index</td>
+<td style="text-align:center">index</td>
+<td style="text-align:center">索引</td>
+</tr>
+<tr>
+<td style="text-align:center">table joins</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">表连接,MongoDB不支持</td>
+</tr>
+<tr>
+<td style="text-align:center">primary key</td>
+<td style="text-align:center">primary key</td>
+<td style="text-align:center">主键,MongoDB自动将_id字段设置为主键</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>数据库</strong></li>
+</ul>
+<p>一个mongodb中可以建立多个数据库。<br>MongoDB的默认数据库为”db”，该数据库存储在data目录中。<code>show dbs</code>命令可以显示所有数据的列表。MongoDB的单个实例可以容纳多个独立的数据库，每一个都有自己的集合和权限，不同的数据库也放置在不同的文件中。<br>数据库也通过名字来标识。数据库名可以是满足以下条件的任意UTF-8字符串。<br>不能是空字符串（””)。<br>不得含有’ ‘（空格)、.、$、/、\和\0 (空字符)。<br>应全部小写。<br>最多64字节。<br>admin： 从权限的角度来看，这是”root”数据库。要是将一个用户添加到这个数据库，这个用户自动继承所有数据库的权限。一些特定的服务器端命令也只能从这个数据库运行，比如列出所有的数据库或者关闭服务器。<br>local: 这个数据永远不会被复制，可以用来存储限于本地单台服务器的任意集合<br>config: 当Mongo用于分片设置时，config数据库在内部使用，用于保存分片的相关信息。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ mongo <span class="comment"># mongo客户端命令</span></div><div class="line">$ db <span class="comment"># 显示当前数据库对象或集合</span></div><div class="line">$ show dbs <span class="comment"># 显示所有数据的列表</span></div><div class="line">$ use <span class="built_in">local</span> <span class="comment">#  运行"use"命令，可以连接到一个指定的数据库。</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>文档</strong>  </li>
+</ul>
+<p>文档是一组键值(key-value)对(即BSON)。MongoDB 的文档不需要设置相同的字段，并且相同的字段不需要相同的数据类型，这与关系型数据库有很大的区别，也是 MongoDB 非常突出的特点。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"key1"</span>:<span class="string">"value1"</span>,</div><div class="line">  <span class="attr">"key2"</span>:<span class="string">"value2"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>需要注意的是：<br>文档中的键/值对是有序的。<br>文档中的值不仅可以是在双引号里面的字符串，还可以是其他几种数据类型（甚至可以是整个嵌入的文档)。<br>MongoDB区分类型和大小写。<br>MongoDB的文档不能有重复的键。<br>文档的键是字符串。除了少数例外情况，键可以使用任意UTF-8字符。</p>
+<p>文档键命名规范：<br>键不能含有\0 (空字符)。这个字符用来表示键的结尾。<br>.和$有特别的意义，只有在特定环境下才能使用。<br>以下划线”_“开头的键是保留的(不是严格要求的)。  </p>
+<ul>
+<li><strong>集合</strong></li>
+</ul>
+<p>集合就是 MongoDB 文档组，类似于 RDBMS （关系数据库管理系统：Relational Database Management System)中的表格。<br>集合存在于数据库中，集合没有固定的结构，这意味着你在对集合可以插入不同格式和类型的数据，但通常情况下我们插入集合的数据都会有一定的关联性。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"name"</span>:<span class="string">"xxx"</span></div><div class="line">&#125;</div><div class="line">&#123;</div><div class="line">  <span class="attr">"name"</span>:<span class="string">"yyy"</span>,<span class="attr">"age"</span>:<span class="string">"20"</span></div><div class="line">&#125;</div><div class="line">&#123;</div><div class="line">  <span class="attr">"name"</span>:<span class="string">"zzz"</span>,<span class="attr">"age"</span>:<span class="string">"30"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当第一个文档插入时，集合就会被创建。<br><strong>合法的集合名</strong><br>集合名不能是空字符串””。<br>集合名不能含有\0字符（空字符)，这个字符表示集合名的结尾。<br>集合名不能以”system.”开头，这是为系统集合保留的前缀。<br>用户创建的集合名字不能含有保留字符。有些驱动程序的确支持在集合名里面包含，这是因为某些系统生成的集合中包含该字符。除非你要访问这种系统创建的集合，否则千万不要在名字里出现$。<br><strong>capped collections固定大小的collection</strong><br>它有很高的性能以及队列过期的特性(过期按照插入的顺序). 有点和 “RRD” 概念类似。<br>Capped collections是高性能自动的维护对象的插入顺序。它非常适合类似记录日志的功能 和标准的collection不同，你必须要显式的创建一个capped collection， 指定一个collection的大小，单位是字节。collection的数据存储空间值提前分配的。<br>要注意的是指定的存储大小包含了数据库的头信息。<br><code>db.createCollection(&quot;mycoll&quot;, {capped:true, size:100000})</code><br>在capped collection中，你能添加新的对象。<br>能进行更新，然而，对象不会增加存储空间。如果增加，更新就会失败 。<br>数据库不允许进行删除。使用drop()方法删除collection所有的行。<br>注意: 删除之后，你必须显式的重新创建这个collection。<br>在32bit机器中，capped collection最大存储为1e9( 1X109)个字节。<br>判断集合是否为固定集合:<code>db.cappedLogCollection.isCapped()</code><br>将已存在的集合转换为固定集合:<code>db.runCommand({&quot;convertToCapped&quot;:&quot;posts&quot;,size:10000})</code><br>固定集合文档按照插入顺序储存的,默认情况下查询就是按照插入顺序返回的,也可以使用$natural调整返回顺序。<br><code>db.cappedLogCollection.find().sort({$natural:-1})</code></p>
+<p><strong>固定集合属性及用法</strong><br><strong>属性</strong></p>
+<ul>
+<li>属性1:对固定集合进行插入速度极快</li>
+<li>属性2:按照插入顺序的查询输出速度极快</li>
+<li>属性3:能够在插入最新数据时,淘汰最早的数据<br><strong>用法</strong></li>
+<li>用法1:储存日志信息</li>
+<li><p>用法2:缓存一些少量的文档</p>
+</li>
+<li><p><strong>元数据</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">集合命名空间</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">dbname.system.namespaces</td>
+<td style="text-align:center">列出所有名字空间。</td>
+</tr>
+<tr>
+<td style="text-align:center">dbname.system.indexes</td>
+<td style="text-align:center">列出所有索引。</td>
+</tr>
+<tr>
+<td style="text-align:center">dbname.system.profile</td>
+<td style="text-align:center">包含数据库概要(profile)信息。</td>
+</tr>
+<tr>
+<td style="text-align:center">dbname.system.users</td>
+<td style="text-align:center">列出所有可访问数据库的用户。</td>
+</tr>
+<tr>
+<td style="text-align:center">dbname.local.sources</td>
+<td style="text-align:center">包含复制对端（slave）的服务器信息和状态。</td>
+</tr>
+</tbody>
+</table>
+<p>在插入数据，可以创建索引。但除此之外该表信息是不可变的(特殊的drop index命令将自动更新相关信息)。<br>是可修改的。 是可删除的。</p>
+<ul>
+<li><strong>MongoDB 数据类型</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>String</td>
+<td>字符串。存储数据常用的数据类型。在 MongoDB 中，UTF-8 编码的字符串才是合法的。</td>
+</tr>
+<tr>
+<td>Integer</td>
+<td>整型数值。用于存储数值。根据你所采用的服务器，可分为 32 位或 64 位。</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>布尔值。用于存储布尔值（真/假）。</td>
+</tr>
+<tr>
+<td>Double</td>
+<td>双精度浮点值。用于存储浮点值。</td>
+</tr>
+<tr>
+<td>Min/Max keys</td>
+<td>将一个值与 BSON（二进制的 JSON）元素的最低值和最高值相对比。</td>
+</tr>
+<tr>
+<td>Arrays</td>
+<td>用于将数组或列表或多个值存储为一个键。</td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>时间戳。记录文档修改或添加的具体时间。</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>用于内嵌文档。</td>
+</tr>
+<tr>
+<td>Null</td>
+<td>用于创建空值。</td>
+</tr>
+<tr>
+<td>Symbol</td>
+<td>符号。该数据类型基本上等同于字符串类型，但不同的是，它一般用于采用特殊符号类型的语言。</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>日期时间。用 UNIX 时间格式来存储当前日期或时间。你可以指定自己的日期时间：创建 Date 对象，传入年月日信息。</td>
+</tr>
+<tr>
+<td>Object ID</td>
+<td>对象 ID。用于创建文档的 ID。</td>
+</tr>
+<tr>
+<td>Binary Data</td>
+<td>二进制数据。用于存储二进制数据。</td>
+</tr>
+<tr>
+<td>Code</td>
+<td>代码类型。用于在文档中存储 JavaScript 代码。</td>
+</tr>
+<tr>
+<td>Regular expression</td>
+<td>正则表达式类型。用于存储正则表达式。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="NoSQL和SQL"><a href="#NoSQL和SQL" class="headerlink" title="NoSQL和SQL"></a>NoSQL和SQL</h4><p>NoSQL，指的是非关系型的数据库。NoSQL有时也称作Not Only SQL的缩写，是对不同于传统的关系型数据库的数据库管理系统的统称。<br>RDBMS</p>
+<ul>
+<li>高度组织化结构化数据</li>
+<li>结构化查询语言（SQL） (SQL)</li>
+<li>数据和关系都存储在单独的表中。</li>
+<li>数据操纵语言，数据定义语言</li>
+<li>严格的一致性</li>
+<li>基础事务<br>NoSQL</li>
+<li>代表着不仅仅是SQL</li>
+<li>没有声明性查询语言</li>
+<li>没有预定义的模式<br>-键 - 值对存储，列存储，文档存储，图形数据库</li>
+<li>最终一致性，而非ACID属性</li>
+<li>非结构化和不可预知的数据</li>
+<li>CAP定理</li>
+<li>高性能，高可用性和可伸缩性</li>
+</ul>
+<p>NoSQL的优点/缺点<br>优点:</p>
+<ul>
+<li>高可扩展性</li>
+<li>分布式计算</li>
+<li>低成本</li>
+<li>架构的灵活性，半结构化数据</li>
+<li>没有复杂的关系<br>缺点:</li>
+<li>没有标准化</li>
+<li>有限的查询功能（到目前为止）</li>
+<li>最终一致是不直观的程序</li>
+</ul>
+<h4 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h4><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><hr>
+<h4 id="ubuntu安装"><a href="#ubuntu安装" class="headerlink" title="ubuntu安装"></a>ubuntu安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Ubuntu 16.04的安装</span></div><div class="line">$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6</div><div class="line">$ <span class="built_in">echo</span> <span class="string">"deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse"</span> | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list</div><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get install -y mongodb-org</div><div class="line"><span class="comment"># Run MongoDB Community Edition</span></div><div class="line"><span class="comment"># /var/log/mongodb/mongod.log 日志文件</span></div><div class="line"><span class="comment"># /var/lib/mongodb data files</span></div><div class="line"><span class="comment"># /etc/mongod.conf 配置文件, 27017为默认端口</span></div><div class="line"><span class="comment"># Start MongoDB.</span></div><div class="line">$ sudo service mongod start</div><div class="line"><span class="comment"># Stop MongoDB.</span></div><div class="line">$ sudo service mongod stop</div><div class="line"><span class="comment"># Restart MongoDB.</span></div><div class="line">$ sudo service mongod restart</div><div class="line"><span class="comment"># Uninstall MongoDB Community Edition</span></div><div class="line"><span class="comment"># Stop MongoDB.</span></div><div class="line">$ sudo service mongod stop</div><div class="line"><span class="comment"># Remove Packages.</span></div><div class="line">$ sudo apt-get purge mongodb-org*</div><div class="line"><span class="comment"># Remove Data Directories.</span></div><div class="line">$ sudo rm -r /var/<span class="built_in">log</span>/mongodb</div><div class="line">$ sudo rm -r /var/lib/mongodb</div></pre></td></tr></table></figure>
+<h3 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h3><hr>
+<h4 id="MongoDB-连接"><a href="#MongoDB-连接" class="headerlink" title="MongoDB - 连接"></a>MongoDB - 连接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt; mongodb://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][/[database][?options]]</div><div class="line">&gt; mongodb://localhost</div><div class="line"># 通过 shell 连接 MongoDB 服务：</div><div class="line">&gt; mongo</div><div class="line">&gt; mongodb://admin:123456@localhost/</div><div class="line">&gt; mongodb://admin:123456@localhost/test</div></pre></td></tr></table></figure>
+<p>mongodb:// 这是固定的格式，必须要指定。<br>username:password@ 可选项，如果设置，在连接数据库服务器之后，驱动都会尝试登陆这个数据库<br>host1 必须的指定至少一个host, host1 是这个URI唯一要填写的。它指定了要连接服务器的地址。如果要连接复制集，请指定多个主机地址。<br>portX 可选的指定端口，如果不填，默认为27017<br>/database 如果指定username:password@，连接并验证登陆指定数据库。若不指定，默认打开 test 数据库。<br>?options 是连接选项。如果不使用/database，则前面需要加上/。所有连接选项都是键值对name=value，键值对之间通过&amp;或;（分号）隔开  </p>
+<h4 id="MongoDB-数据库操作"><a href="#MongoDB-数据库操作" class="headerlink" title="MongoDB 数据库操作"></a>MongoDB 数据库操作</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># MongoDB 创建数据库的语法格式如下：</span></div><div class="line"><span class="comment"># use DATABASE_NAME</span></div><div class="line">$ use xxx</div><div class="line">$ db.xxx.insert(&#123;<span class="string">"key"</span>:<span class="string">"xxx"</span>&#125;)</div><div class="line"></div><div class="line"><span class="comment"># MongoDB 删除数据库的语法格式如下：</span></div><div class="line"><span class="comment"># db.dropDatabase()</span></div><div class="line">$ db.dropDatabase()</div><div class="line"></div><div class="line"><span class="comment"># 集合删除语法格式如下：db.collection.drop()</span></div><div class="line">$ show tables 显示集合</div><div class="line">$ db.xxx.drop()</div></pre></td></tr></table></figure>
+<h4 id="数据导入导出和备份"><a href="#数据导入导出和备份" class="headerlink" title="数据导入导出和备份"></a>数据导入导出和备份</h4><ul>
+<li><p>导入cvs</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">"C:\Program Files\MongoDB\Server\<span class="number">3</span>.<span class="number">2</span>\bin\mongoimport" /d drugOrg /c testtest /<span class="built_in">type</span>:csv /headerline  /file D:\assign.csv</div><div class="line">"C:\Program Files\MongoDB\Server\<span class="number">3</span>.<span class="number">2</span>\bin\mongoimport" /d drugOrg /c t_signed /<span class="built_in">type</span>:csv /headerline  /file D:\t_signed.csv</div></pre></td></tr></table></figure>
+</li>
+<li><p>导出cvs</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">"C:\Program Files\MongoDB\Server\<span class="number">3</span>.<span class="number">2</span>\bin\mongoexport"  --csv -d drugOrg -c t_signed -o D:\t_signed.csv</div><div class="line">"C:\Program Files\MongoDB\Server\<span class="number">3</span>.<span class="number">2</span>\bin\mongoexport"  --csv -f _id,userId,companyId,<span class="built_in">time</span>,singedTagId,department,day,orgId,userName,deviceId,tagNameList,treePath,headPicUrl,addressName,coordinate,address,visitId,country,province,city -d drugOrg -c t_signed -o D:\t_signed.csv</div></pre></td></tr></table></figure>
+</li>
+<li><p>还原数据库</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">"C:\Program Files\MongoDB\Server\<span class="number">3</span>.<span class="number">2</span>\bin\mongorestore" -d drugOrg --drop D:\drugOrg\drugOrg</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="ObjectId"><a href="#ObjectId" class="headerlink" title="ObjectId"></a>ObjectId</h4><p>ObjectId 是一个12字节 BSON 类型数据，有以下格式：</p>
+<ul>
+<li>前4个字节表示时间戳</li>
+<li>接下来的3个字节是机器标识码</li>
+<li>紧接的两个字节由进程id组成（PID）</li>
+<li>最后三个字节是随机数。<br>MongoDB中存储的文档必须有一个”_id”键。这个键的值可以是任何类型的，默认是个ObjectId对象。<br>在一个集合里面，每个文档都有唯一的”_id”值，来确保集合里面每个文档都能被唯一标识。<br>MongoDB采用ObjectId，而不是其他比较常规的做法（比如自动增加的主键）的主要原因，因为在多个 服务器上同步自动增加主键值既费力还费时。<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; newObjectId = ObjectId()</div><div class="line">&gt; myObjectId = ObjectId(<span class="string">"5349b4ddd2781d08c09890f4"</span>)</div><div class="line">&gt; ObjectId(<span class="string">"5349b4ddd2781d08c09890f4"</span>).getTimestamp() <span class="comment">// 获取时间戳</span></div><div class="line">&gt; <span class="keyword">new</span> ObjectId().str <span class="comment">// ObjectId 转换成字符串</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="MongoDB-插入文档"><a href="#MongoDB-插入文档" class="headerlink" title="MongoDB  插入文档"></a>MongoDB  插入文档</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"># 插入文档</div><div class="line"># db.COLLECTION_NAME.insert(document)</div><div class="line">&gt; db.col.insert(&#123;</div><div class="line">  "title": "MongoDB 教程",</div><div class="line">  "description": "MongoDB 是一个 Nosql 数据库",</div><div class="line">  "by": "菜鸟教程",</div><div class="line">  "url": "http://www.runoob.com",</div><div class="line">  "tags": ["mongodb", "database", "NoSQL"],</div><div class="line">  "likes": 100</div><div class="line">&#125;)</div><div class="line">&gt; db.col.find()</div><div class="line">&gt; document=(&#123;</div><div class="line">  "title": "MongoDB 教程",</div><div class="line">  "description": "MongoDB 是一个 Nosql 数据库",</div><div class="line">  "by": "菜鸟教程",</div><div class="line">  "url": "http://www.runoob.com",</div><div class="line">  "tags": ["mongodb", "database", "NoSQL"],</div><div class="line">  "likes": 100</div><div class="line">&#125;);</div><div class="line">&gt; document</div><div class="line">&gt; db.col.insert(document)</div><div class="line"># 插入文档你也可以使用 db.col.save(document) 命令。</div><div class="line"># 如果指定 _id 字段，则会更新该 _id 的数据。</div><div class="line"># 3.2 版本后添加的方法</div><div class="line">#db.collection.insertOne():向指定集合中插入一条文档数据</div><div class="line">#db.collection.insertMany():向指定集合中插入多条文档数据</div><div class="line">&gt; var document = db.col.insertOne(&#123;"a": 3&#125;)</div><div class="line">&gt; var res = db.col.insertMany([&#123;"b": 3&#125;, &#123;"c": 4&#125;])</div></pre></td></tr></table></figure>
+<h4 id="MongoDB-更新文档"><a href="#MongoDB-更新文档" class="headerlink" title="MongoDB 更新文档"></a>MongoDB 更新文档</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt; db.collection.update(</div><div class="line">   &lt;query&gt;,</div><div class="line">   &lt;update&gt;,</div><div class="line">   &#123;</div><div class="line">     upsert: &lt;boolean&gt;,</div><div class="line">     multi: &lt;boolean&gt;,</div><div class="line">     writeConcern: &lt;document&gt;</div><div class="line">   &#125;</div><div class="line">)</div></pre></td></tr></table></figure>
+<p>参数说明：<br>query : update的查询条件，类似sql update查询内where后面的。<br>update : update的对象和一些更新的操作符（如$,$inc…）等，也可以理解为sql update查询内set后面的<br>upsert : 可选，这个参数的意思是，如果不存在update的记录，是否插入objNew,true为插入，默认是false，不插入。<br>multi : 可选，mongodb 默认是false,只更新找到的第一条记录，如果这个参数为true,就把按条件查出来多条记录全部更新。<br>writeConcern :可选，抛出异常的级别。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&gt; db.col.update(&#123;<span class="string">'title'</span>:<span class="string">'MongoDB 教程'</span>&#125;,&#123;<span class="variable">$set</span>:&#123;<span class="string">'title'</span>:<span class="string">'MongoDB'</span>&#125;&#125;)</div><div class="line">&gt; db.col.find().pretty()</div><div class="line"><span class="comment"># save() 方法通过传入的文档来替换已有文档</span></div><div class="line">&gt; db.col.save(&#123;</div><div class="line">	<span class="string">"_id"</span> : ObjectId(<span class="string">"596dfe19914215fcb553bfab"</span>),</div><div class="line">    <span class="string">"title"</span> : <span class="string">"MongoDB"</span>,</div><div class="line">    <span class="string">"description"</span> : <span class="string">"MongoDB 是一个 Nosql 数据库"</span>,</div><div class="line">    <span class="string">"by"</span> : <span class="string">"Runoob"</span>,</div><div class="line">    <span class="string">"url"</span> : <span class="string">"http://www.runoob.com"</span>,</div><div class="line">    <span class="string">"tags"</span> : [</div><div class="line">            <span class="string">"mongodb"</span>,</div><div class="line">            <span class="string">"NoSQL"</span></div><div class="line">    ],</div><div class="line">    <span class="string">"likes"</span> : 110</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h4 id="MongoDB-删除文档"><a href="#MongoDB-删除文档" class="headerlink" title="MongoDB 删除文档"></a>MongoDB 删除文档</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">db.collection.remove(</div><div class="line">   &lt;query&gt;,</div><div class="line">   &#123;</div><div class="line">     justOne: &lt;boolean&gt;,</div><div class="line">     writeConcern: &lt;document&gt;</div><div class="line">   &#125;</div><div class="line">)</div><div class="line"><span class="comment"># 参数说明：</span></div><div class="line"><span class="comment"># query :（可选）删除的文档的条件。</span></div><div class="line"><span class="comment"># justOne : （可选）如果设为 true 或 1，则只删除一个文档。</span></div><div class="line"><span class="comment"># writeConcern :（可选）抛出异常的级别。</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; db.col.remove(&#123;<span class="string">'title'</span>:<span class="string">'MongoDB 教程'</span>&#125;) <span class="comment"># 删除查询到的数据</span></div><div class="line">&gt; db.col.remove(&#123;&#125;) <span class="comment">#删除所有数据</span></div><div class="line">&gt; db.col.remove(&#123;<span class="string">'title'</span>:<span class="string">'MongoDB'</span>&#125;,1)</div></pre></td></tr></table></figure>
+<h4 id="MongoDB-查询文档"><a href="#MongoDB-查询文档" class="headerlink" title="MongoDB 查询文档"></a>MongoDB 查询文档</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">db.collection.find(query, projection)</div><div class="line"><span class="comment"># query ：可选，使用查询操作符指定查询条件</span></div><div class="line"><span class="comment"># projection ：可选，使用投影操作符指定返回的键。查询时返回文档中所有键值， 只需省略该参数即可（默认省略）。指定那些列显示和不显示（0表示不显示1表示显示)</span></div><div class="line"><span class="comment"># pretty() 方法以格式化的方式来显示所有文档。</span></div><div class="line">db.col.find().pretty()</div><div class="line"><span class="comment"># 除了 find() 方法之外，还有一个 findOne() 方法，它只返回一个文档。</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; db.col.find().pretty()</div><div class="line">&gt; db.col.find(&#123;&#125;,&#123;<span class="string">"k1"</span>:0,<span class="string">"k2"</span>:2&#125;).pretty()</div></pre></td></tr></table></figure>
+<ul>
+<li><p>MongoDB AND 条件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// WHERE k1='v1' AND k2='v2'</span></div><div class="line">db.col.find(&#123;<span class="string">"k1"</span>:<span class="string">"v1"</span>, <span class="string">"k2"</span>:<span class="string">"v2"</span>&#125;).pretty()</div></pre></td></tr></table></figure>
+</li>
+<li><p>MongoDB OR 条件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// WHERE k1=v1 OR k2 = v2</span></div><div class="line">&gt; db.col.find(&#123;</div><div class="line">      <span class="attr">$or</span>: [</div><div class="line">	     &#123;<span class="attr">k1</span>: v1&#125;, &#123;<span class="attr">k2</span>:v2&#125;</div><div class="line">      ]</div><div class="line">   &#125;).pretty()</div></pre></td></tr></table></figure>
+</li>
+<li><p>AND 和 OR 联合使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// WHERE k1 &gt; 50 AND (k2 = v2 OR k3 = v3)</span></div><div class="line">&gt; db.col.find(&#123;</div><div class="line">    <span class="string">"k1"</span>: &#123;<span class="attr">$gt</span>:<span class="number">50</span>&#125;,</div><div class="line">    <span class="attr">$or</span>: [&#123;<span class="string">"k2"</span>: <span class="string">"v2"</span>&#125;,&#123;<span class="string">"k3"</span>: <span class="string">"v3"</span>&#125;]</div><div class="line">  &#125;).pretty()</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用 explain() 查询分析</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.users.find(&#123;<span class="attr">gender</span>:<span class="string">"M"</span>&#125;,&#123;<span class="attr">user_name</span>:<span class="number">1</span>,<span class="attr">_id</span>:<span class="number">0</span>&#125;).explain()</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>现在，我们看看这个结果集的字段：</p>
+<ul>
+<li>indexOnly: 字段为 true ，表示我们使用了索引。</li>
+<li>cursor：因为这个查询使用了索引，MongoDB 中索引存储在B树结构中，所以这是也使用了 BtreeCursor 类型的游标。如果没有使用索引，游标的类型是 BasicCursor。这个键还会给出你所使用的索引的名称，你通过这个名称可以查看当前数据库下的system.indexes集合（系统自动创建，由于存储索引信息，这个稍微会提到）来得到索引的详细信息。</li>
+<li>n：当前查询返回的文档数量。</li>
+<li>nscanned/nscannedObjects：表明当前这次查询一共扫描了集合中多少个文档，我们的目的是，让这个数值和返回文档的数量越接近越好。</li>
+<li>millis：当前查询所需时间，毫秒数。</li>
+<li>indexBounds：当前查询具体使用的索引。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 可以使用 hint 来强制 MongoDB 使用一个指定的索引。</span></div><div class="line">db.users.find(&#123;<span class="attr">gender</span>:<span class="string">"M"</span>&#125;,&#123;<span class="attr">user_name</span>:<span class="number">1</span>,<span class="attr">_id</span>:<span class="number">0</span>&#125;).hint(&#123;<span class="attr">gender</span>:<span class="number">1</span>,<span class="attr">user_name</span>:<span class="number">1</span>&#125;).explain()</div></pre></td></tr></table></figure>
+<h4 id="MongoDB-正则表达式"><a href="#MongoDB-正则表达式" class="headerlink" title="MongoDB 正则表达式"></a>MongoDB 正则表达式</h4><ul>
+<li>正则表达式是使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。</li>
+<li>许多程序设计语言都支持利用正则表达式进行字符串操作。</li>
+<li>MongoDB 使用 $regex 操作符来设置匹配字符串的正则表达式。</li>
+<li>MongoDB使用PCRE (Perl Compatible Regular Expression) 作为正则表达式语言。</li>
+<li>不同于全文检索，我们使用正则表达式不需要做任何配置。<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.posts.find(&#123;<span class="attr">post_text</span>:&#123;<span class="attr">$regex</span>:<span class="string">"runoob"</span>,<span class="attr">$options</span>:<span class="string">"$i"</span>&#125;&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>数组元素使用正则表达式</strong><br>我们还可以在数组字段中使用正则表达式来查找内容。</p>
+<p><strong>优化正则表达式查询</strong></p>
+<ul>
+<li>如果你的文档中字段设置了索引，那么使用索引相比于正则表达式匹配查找所有的数据查询速度更快。</li>
+<li>如果正则表达式是前缀表达式，所有匹配的数据将以指定的前缀字符串为开始。例如： 如果正则表达式为 ^tut ，查询语句将查找以 tut 为开头的字符串。</li>
+</ul>
+<p><strong>注意：</strong></p>
+<ul>
+<li>正则表达式中使用变量。一定要使用eval将组合的字符串进行转换，不能直接将字符串拼接后传入给表达式。否则没有报错信息，只是结果为空！实例如下：<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name=<span class="built_in">eval</span>(<span class="string">"/"</span> + 变量值key +<span class="string">"/i"</span>);</div><div class="line">title:<span class="built_in">eval</span>(<span class="string">"/"</span>+title+<span class="string">"/i"</span>)    <span class="comment">// 等同于 title:&#123;$regex:title,$Option:"$i"&#125;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="MongoDB-条件操作符"><a href="#MongoDB-条件操作符" class="headerlink" title="MongoDB 条件操作符"></a>MongoDB 条件操作符</h4><table>
+<thead>
+<tr>
+<th>操作</th>
+<th>格式</th>
+<th>范例</th>
+<th>RDBMS中的类似语句</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>等于</td>
+<td>{<key>:<value>}</value></key></td>
+<td>db.col.find({“by”:”菜鸟教程”}).pretty()</td>
+<td>where by = ‘菜鸟教程’</td>
+</tr>
+<tr>
+<td>小于</td>
+<td>{<key>:{$lt:<value>}}</value></key></td>
+<td>db.col.find({“likes”:{$lt:50}}).pretty()</td>
+<td>where likes &lt; 50</td>
+</tr>
+<tr>
+<td>小于或等于</td>
+<td>{<key>:{$lte:<value>}}</value></key></td>
+<td>db.col.find({“likes”:{$lte:50}}).pretty()</td>
+<td>where likes &lt;= 50</td>
+</tr>
+<tr>
+<td>大于</td>
+<td>{<key>:{$gt:<value>}}</value></key></td>
+<td>db.col.find({“likes”:{$gt:50}}).pretty()</td>
+<td>where likes &gt; 50</td>
+</tr>
+<tr>
+<td>大于或等于</td>
+<td>{<key>:{$gte:<value>}}</value></key></td>
+<td>db.col.find({“likes”:{$gte:50}}).pretty()</td>
+<td>where likes &gt;= 50</td>
+</tr>
+<tr>
+<td>不等于</td>
+<td>{<key>:{$ne:<value>}}</value></key></td>
+<td>db.col.find({“likes”:{$ne:50}}).pretty()</td>
+<td>where likes != 50</td>
+</tr>
+</tbody>
+</table>
+<h4 id="MongoDB-type-操作符"><a href="#MongoDB-type-操作符" class="headerlink" title="MongoDB $type 操作符"></a>MongoDB $type 操作符</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 查询col集合中 title 值类型为字符串的所有数据</span></div><div class="line">db.col.find(&#123;<span class="string">"title"</span> : &#123;<span class="attr">$type</span> : <span class="number">2</span>&#125;&#125;)</div></pre></td></tr></table></figure>
+<h4 id="MongoDB简单查询操作符"><a href="#MongoDB简单查询操作符" class="headerlink" title="MongoDB简单查询操作符"></a>MongoDB简单查询操作符</h4><table>
+<thead>
+<tr>
+<th>操作</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$eq</td>
+<td>用来等值条件过滤某一个key的值</td>
+<td>db.col.find({“name”:{$eq:”steven”}})</td>
+</tr>
+<tr>
+<td>$gt</td>
+<td>用来判断某个key值大于某个指定的值</td>
+<td>db.col.find({“age”:{$gt:19}})</td>
+</tr>
+<tr>
+<td>$gte</td>
+<td>用来判断某个key值大于等于某个指定的值</td>
+<td>db.col.find({“age”:{$gte:19}})</td>
+</tr>
+<tr>
+<td>$lt</td>
+<td>用来判断某个key值小于某个指定的值</td>
+<td>db.col.find({“age”:{$lt:20}})</td>
+</tr>
+<tr>
+<td>$lte</td>
+<td>用来判断某个key值小于等于某个指定的值</td>
+<td>db.col.find({“age”:{$lte:20}})</td>
+</tr>
+<tr>
+<td>$ne</td>
+<td>用来不等值条件过滤某一个key的值。</td>
+<td>db.col.find({“name”:{$ne:”steven”}})</td>
+</tr>
+<tr>
+<td>$in</td>
+<td>用来指定某个key的值在指定的离散的值域内</td>
+<td>db.col.find({“name”:{$in:[“steven”,”jack”]}})</td>
+</tr>
+<tr>
+<td>$nin</td>
+<td>用来指定key值不存在某个指定的离散值域内</td>
+<td>db.col.find({“name”:{$nin:[“steven”,”jack”]}})</td>
+</tr>
+<tr>
+<td>$or</td>
+<td>任意组合不同的查询条件（可以针对任意key的限制条件），只要满足任意组合条件中的一个即可。</td>
+<td>db.col.find({“$or” : [{“name”:”steven”},{“age”:20}]})</td>
+</tr>
+<tr>
+<td>$and</td>
+<td>任意组合不同的查询条件（可以针对任意key的限制条件），并且必须同时满足所有条件。</td>
+<td>db.col.find({“$and” : [{“name”:”steven”},{“age”:20}]})</td>
+</tr>
+<tr>
+<td>$not</td>
+<td>元条件语句，需要和其他条件语句组合使用。</td>
+<td>db.col.find({“age”:{“$not”:{“$lt”:20}}})</td>
+</tr>
+<tr>
+<td>$nor</td>
+<td>表示所有条件均不能满足则返回</td>
+<td>db.col.find({“$nor” : [{“name”:”steven”},{“age”:20}]}) 凡是 name 为 steven 或者 age 为 20 的全部过滤掉</td>
+</tr>
+<tr>
+<td>$exists</td>
+<td>查询不包含某一个属性（key）的文档</td>
+<td>db.col.find({“name”:{“$exists”:true}})</td>
+</tr>
+<tr>
+<td>$mod</td>
+<td>取余操作符，筛选经过区域操作后，结果符合条件的文档。</td>
+<td>db.col.find({“age” : {“$mod” : [4,0]}}) 返回age的值和 4 求余后 结果为 0 的数据</td>
+</tr>
+<tr>
+<td>$regex</td>
+<td>筛选值满足正则表达式的文档。</td>
+<td>db.col.find({“name” : {$regex:”stev*”,$options:”i”}})</td>
+</tr>
+<tr>
+<td>$text</td>
+<td>针对建立了全文索引的字段，实施全文检索匹配。</td>
+<td>db.col.find({“$text”:{$search:”steven”,$language:”en”}})</td>
+</tr>
+<tr>
+<td>$where</td>
+<td>强大的查询关键字，但性能较差，可以传入js表达式或js函数来筛选数据。</td>
+<td>见下面</td>
+</tr>
+<tr>
+<td>$all</td>
+<td>数组查询操作符，查询条件是一个数组，被查询的字段也是一个数组，要求被查询的数组类型的字段要是查询条件数组的超集（即大数组要包含小数组）</td>
+<td>db.col.find({“values”:{$all:[“a”,”b”]}})</td>
+</tr>
+<tr>
+<td>$elemMatch</td>
+<td>数组查询操作符，用来指定数组的每一个元素同时满足所罗列的条件，如果不指定，则条件会是或的关系</td>
+<td>db.blog.find({“comments”:{“$elemMatch”:{“author”:”joe”,”score”:{“$gte”:5}}}}) 查joe发表的5分以上的评论，注意comments为二维数组</td>
+</tr>
+<tr>
+<td>$size</td>
+<td>用于某个数组类型的key对应值的数量满足要求。</td>
+<td>db.col.find({“values”:{$size : 3}})</td>
+</tr>
+<tr>
+<td>$comment</td>
+<td>在查询、更新或其他操作执行过程中，可以通过添加$comment操作符添加评论。改评论会被记录在日志中，用于后续分析。</td>
+<td>db.col.find( { <query>, $comment: <comment> } )</comment></query></td>
+</tr>
+<tr>
+<td>$geoWithin</td>
+<td>这个操作符基于2d 空间索引，首先要针对文档的某个字段建立一个2d的空间索引，然后利用此操作符，可以在一个2d空间范围内指定一个多变形，$geoWithin操作符就是查询出包含在多变形范围内的点。</td>
+<td></td>
+</tr>
+<tr>
+<td>$geoIntersects</td>
+<td>同样基于2d空间索引，计算当前的空间范围和指定的geo多变形取交集。</td>
+<td></td>
+</tr>
+<tr>
+<td>$near</td>
+<td>基于2d空间索引，指定一个点，返回该点有近及远的所有的点。</td>
+<td></td>
+</tr>
+<tr>
+<td>$nearSphere</td>
+<td>基于2d空间索引，指定一个点，由近及远的返回所有的点，和$near操作符不同的是计算距离的方式 $nearSphere计算的是球面距离。$near计算的是坐标距离。</td>
+<td></td>
+</tr>
+<tr>
+<td>$</td>
+<td>如果文档中某个value是数组类型，通过 $ 操作符可以指定数组字段的投影，返回数组字段中第一个匹配的那个元素，相当于截断了原来的整个数组，只返回第一个值。</td>
+<td>db.col.find({“values”:{$eq:”a”}},{“values.$”:1}) 会返回values数组中，第一个和”a”相等的元素，也就是返回”a”</td>
+</tr>
+<tr>
+<td>$meta</td>
+<td>和全文索引 text index 组合使用，针对一个带有全文索引的元素，指定改操作符，可以返回和查询条件相似的分数，分数越高，匹配度越高。</td>
+<td></td>
+</tr>
+<tr>
+<td>$slice</td>
+<td>数组类型字段的投影操作，返回原来数据的一个子集.针对一个数组，其有如下几种返回子集的方式：</td>
+<td>示例如下</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// $where</span></div><div class="line">db.op_test.find(&#123;<span class="string">"$where"</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> index <span class="keyword">in</span> <span class="keyword">this</span>) &#123;</div><div class="line">      <span class="keyword">if</span>(<span class="keyword">this</span>[index] == <span class="string">"steven"</span>) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;&#125;)</div><div class="line"></div><div class="line"><span class="comment">// $slice</span></div><div class="line">db.blog.find(&#123;<span class="string">"comments"</span>:&#123;<span class="string">"$slice"</span>:[<span class="number">10</span>,<span class="number">5</span>]&#125;&#125;)</div></pre></td></tr></table></figure>
+<h4 id="MongoDB-Limit与Skip方法"><a href="#MongoDB-Limit与Skip方法" class="headerlink" title="MongoDB Limit与Skip方法"></a>MongoDB Limit与Skip方法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// db.COLLECTION_NAME.find().limit(NUMBER).skip(NUMBER)</span></div><div class="line"><span class="comment">// 查询第二条数据</span></div><div class="line"><span class="comment">// skip 默认为 0 limit默认为显示所有数据</span></div><div class="line"><span class="comment">// 当查询时同时使用sort,skip,limit，无论位置先后，最先执行顺序sort再skip再limit。</span></div><div class="line">db.col.find(&#123;&#125;,&#123;<span class="string">"title"</span>:<span class="number">1</span>,<span class="attr">_id</span>:<span class="number">0</span>&#125;).skip(<span class="number">1</span>).limit(<span class="number">1</span>)</div></pre></td></tr></table></figure>
+<h4 id="MongoDB-排序"><a href="#MongoDB-排序" class="headerlink" title="MongoDB 排序"></a>MongoDB 排序</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// db.COLLECTION_NAME.find().sort(&#123;KEY:1&#125;)</span></div><div class="line"><span class="comment">// 1 为升序排列，而-1是用于降序排列。</span></div><div class="line">db.col.find(&#123;&#125;,&#123;<span class="string">"title"</span>:<span class="number">1</span>,<span class="attr">_id</span>:<span class="number">0</span>&#125;).sort(&#123;<span class="string">"likes"</span>:<span class="number">-1</span>&#125;)</div></pre></td></tr></table></figure>
+<h4 id="MongoDB-索引"><a href="#MongoDB-索引" class="headerlink" title="MongoDB 索引"></a>MongoDB 索引</h4><p>索引是特殊的数据结构，索引存储在一个易于遍历读取的数据集合中，索引是对数据库表中一列或多列的值进行排序的一种结构<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 建立索引的语法： db.COLLECTION_NAME.ensureIndex(&#123;KEY:1&#125;)</span></div><div class="line">db.col.ensureIndex(&#123;<span class="string">"title"</span>:<span class="number">1</span>&#125;)</div><div class="line">db.col.ensureIndex(&#123;<span class="string">"title"</span>:<span class="number">1</span>,<span class="string">"description"</span>:<span class="number">-1</span>&#125;) <span class="comment">// 类似于关系数据库中的复合索引</span></div><div class="line">db.col.ensureIndex(&#123;<span class="string">"k1"</span>: <span class="number">1</span>, <span class="string">"k2"</span>: <span class="number">-1</span>&#125;, &#123;<span class="string">"background"</span>: <span class="literal">true</span>&#125;)</div></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>background</td>
+<td>Boolean</td>
+<td>建索引过程会阻塞其它数据库操作，background可指定以后台方式创建索引，即增加 “background” 可选参数。 “background” 默认值为false。</td>
+</tr>
+<tr>
+<td>unique</td>
+<td>Boolean</td>
+<td>建立的索引是否唯一。指定为true创建唯一索引。默认值为false.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>索引的名称。如果未指定，MongoDB的通过连接索引的字段名和排序顺序生成一个索引名称。</td>
+</tr>
+<tr>
+<td>dropDups</td>
+<td>Boolean</td>
+<td>在建立唯一索引时是否删除重复记录,指定 true 创建唯一索引。默认值为 false.</td>
+</tr>
+<tr>
+<td>sparse</td>
+<td>Boolean</td>
+<td>对文档中不存在的字段数据不启用索引；这个参数需要特别注意，如果设置为true的话，在索引字段中不会查询出不包含对应字段的文档.。默认值为 false.</td>
+</tr>
+<tr>
+<td>expireAfterSeconds</td>
+<td>integer</td>
+<td>指定一个以秒为单位的数值，完成 TTL设定，设定集合的生存时间。</td>
+</tr>
+<tr>
+<td>v</td>
+<td>index</td>
+<td>version    索引的版本号。默认的索引版本取决于mongod创建索引时运行的版本。</td>
+</tr>
+<tr>
+<td>weights</td>
+<td>document</td>
+<td>索引权重值，数值在 1 到 99,999 之间，表示该索引相对于其他索引字段的得分权重。</td>
+</tr>
+<tr>
+<td>default_language</td>
+<td>string</td>
+<td>对于文本索引，该参数决定了停用词及词干和词器的规则的列表。 默认为英语</td>
+</tr>
+<tr>
+<td>language_override</td>
+<td>string</td>
+<td>对于文本索引，该参数指定了包含在文档中的字段名，语言覆盖默认的language，默认值为 language.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>索引限制</strong></p>
+<ul>
+<li>额外开销<br>每个索引占据一定的存储空间，在进行插入，更新和删除操作时也需要对索引进行操作。所以，如果你很少对集合进行读取操作，建议不使用索引。</li>
+<li>内存(RAM)使用<br>由于索引是存储在内存(RAM)中,你应该确保该索引的大小不超过内存的限制。<br>如果索引的大小大于内存的限制，MongoDB会删除一些索引，这将导致性能下降。</li>
+<li>查询限制<br>索引不能被以下的查询使用：<br>正则表达式及非操作符，如 $nin, $not, 等。<br>算术运算符，如 $mod, 等。</li>
+<li>$where 子句<br>所以，检测你的语句是否使用索引是一个好的习惯，可以用explain来查看。</li>
+<li>索引键限制<br>从2.6版本开始，如果现有的索引字段的值超过索引键的限制，MongoDB中不会创建索引。</li>
+<li>插入文档超过索引键限制<br>如果文档的索引字段值超过了索引键的限制，MongoDB不会将任何文档转换成索引的集合。与mongorestore和mongoimport工具类似。</li>
+<li>最大范围<br>集合中索引不能超过64个<br>索引名的长度不能超过128个字符<br>一个复合索引最多可以有31个字段</li>
+</ul>
+<h4 id="MongoDB-聚合"><a href="#MongoDB-聚合" class="headerlink" title="MongoDB 聚合"></a>MongoDB 聚合</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.COLLECTION_NAME.aggregate(AGGREGATE_OPERATION)</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$sum</td>
+<td>计算总和。</td>
+<td>db.mycol.aggregate([{$group : {_id : “$by_user”, num_tutorial : {$sum : “$likes”}}}])</td>
+</tr>
+<tr>
+<td>$avg</td>
+<td>计算平均值</td>
+<td>db.mycol.aggregate([{$group : {_id : “$by_user”, num_tutorial : {$avg : “$likes”}}}])</td>
+</tr>
+<tr>
+<td>$min</td>
+<td>获取集合中所有文档对应值得最小值。</td>
+<td>db.mycol.aggregate([{$group : {_id : “$by_user”, num_tutorial : {$min : “$likes”}}}])</td>
+</tr>
+<tr>
+<td>$max</td>
+<td>获取集合中所有文档对应值得最大值。</td>
+<td>db.mycol.aggregate([{$group : {_id : “$by_user”, num_tutorial : {$max : “$likes”}}}])</td>
+</tr>
+<tr>
+<td>$push</td>
+<td>在结果文档中插入值到一个数组中。</td>
+<td>db.mycol.aggregate([{$group : {_id : “$by_user”, url : {$push: “$url”}}}])</td>
+</tr>
+<tr>
+<td>$addToSet</td>
+<td>在结果文档中插入值到一个数组中，但不创建副本。</td>
+<td>db.mycol.aggregate([{$group : {_id : “$by_user”, url : {$addToSet : “$url”}}}])</td>
+</tr>
+<tr>
+<td>$first</td>
+<td>根据资源文档的排序获取第一个文档数据。</td>
+<td>db.mycol.aggregate([{$group : {_id : “$by_user”, first_url : {$first : “$url”}}}])</td>
+</tr>
+<tr>
+<td>$last</td>
+<td>根据资源文档的排序获取最后一个文档数据</td>
+<td>db.mycol.aggregate([{$group : {_id : “$by_user”, last_url : {$last : “$url”}}}])</td>
+</tr>
+</tbody>
+</table>
+<p><strong>管道的概念</strong><br>管道在Unix和Linux中一般用于将当前命令的输出结果作为下一个命令的参数。<br>MongoDB的聚合管道将MongoDB文档在一个管道处理完毕后将结果传递给下一个管道处理。管道操作是可以重复的。<br>表达式：处理输入文档并输出。表达式是无状态的，只能用于计算当前聚合管道的文档，不能处理其它的文档。<br>这里我们介绍一下聚合框架中常用的几个操作：  </p>
+<ul>
+<li>$project：修改输入文档的结构。可以用来重命名、增加或删除域，也可以用于创建计算结果以及嵌套文档。</li>
+<li>$match：用于过滤数据，只输出符合条件的文档。$match使用MongoDB的标准查询操作。</li>
+<li>$limit：用来限制MongoDB聚合管道返回的文档数。</li>
+<li>$skip：在聚合管道中跳过指定数量的文档，并返回余下的文档。</li>
+<li>$unwind：将文档中的某一个数组类型字段拆分成多条，每条包含数组中的一个值。</li>
+<li>$group：将集合中的文档分组，可用于统计结果。</li>
+<li>$sort：将输入文档排序后输出。</li>
+<li>$geoNear：输出接近某一地理位置的有序文档。</li>
+</ul>
+<p><strong>$project实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 这样的话结果中就只还有_id,tilte和author三个字段了，默认情况下_id字段是被包含的，如果要想不包含_id话可以这样:</span></div><div class="line"><span class="comment">// 非0显示；0不显示</span></div><div class="line">db.col.aggregate(</div><div class="line">    &#123; <span class="attr">$project</span> : &#123;</div><div class="line">        <span class="attr">title</span> : <span class="number">1</span> ,</div><div class="line">        <span class="attr">author</span> : <span class="number">1</span> ,</div><div class="line">    &#125;&#125;</div><div class="line"> );</div></pre></td></tr></table></figure></p>
+<p><strong>$match实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 用于获取分数大于70小于或等于90记录，然后将符合条件的记录送到下一阶段$group管道操作符进行处理。</span></div><div class="line">db.col.aggregate( [</div><div class="line">                        &#123; <span class="attr">$match</span> : &#123; <span class="attr">score</span> : &#123; <span class="attr">$gt</span> : <span class="number">70</span>, <span class="attr">$lte</span> : <span class="number">90</span> &#125; &#125; &#125;,</div><div class="line">                        &#123; <span class="attr">$group</span>: &#123; <span class="attr">_id</span>: <span class="literal">null</span>, <span class="attr">count</span>: &#123; <span class="attr">$sum</span>: <span class="number">1</span> &#125; &#125; &#125;</div><div class="line">                       ] );</div></pre></td></tr></table></figure></p>
+<p><strong>$skip实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 经过$skip管道操作符处理后，前五个文档被"过滤"掉。</span></div><div class="line">db.col.aggregate(</div><div class="line">    &#123; <span class="attr">$skip</span> : <span class="number">5</span> &#125;);</div></pre></td></tr></table></figure></p>
+<p><strong>$group</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// select by_user as _id, count(*) as num_tutorial from mycol group by by_user</span></div><div class="line">db.col.aggregate([&#123;<span class="attr">$group</span> : &#123;<span class="attr">_id</span> : <span class="string">"$by_user"</span>, <span class="attr">num_tutorial</span> : &#123;<span class="attr">$sum</span> : <span class="number">1</span>&#125;&#125;&#125;])</div></pre></td></tr></table></figure></p>
+<h4 id="MongoDB-原子操作"><a href="#MongoDB-原子操作" class="headerlink" title="MongoDB 原子操作"></a>MongoDB 原子操作</h4><p>mongodb不支持事务，所以，在你的项目中应用时，要注意这点。无论什么设计，都不要要求mongodb保证数据的完整性。<br>但是mongodb提供了许多原子操作，比如文档的保存，修改，删除等，都是原子操作。<br>所谓原子操作就是要么这个文档保存到Mongodb，要么没有保存到Mongodb，不会出现查询到的文档没有保存完整的情况。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">db.books.findAndModify ( &#123;</div><div class="line">   <span class="attr">query</span>: &#123;</div><div class="line">            <span class="attr">_id</span>: <span class="number">123456789</span>,</div><div class="line">            <span class="attr">available</span>: &#123; <span class="attr">$gt</span>: <span class="number">0</span> &#125;</div><div class="line">          &#125;,</div><div class="line">   <span class="attr">update</span>: &#123;</div><div class="line">             <span class="attr">$inc</span>: &#123; <span class="attr">available</span>: <span class="number">-1</span> &#125;,</div><div class="line">             <span class="attr">$push</span>: &#123; <span class="attr">checkout</span>: &#123; <span class="attr">by</span>: <span class="string">"abc"</span>, <span class="attr">date</span>: <span class="keyword">new</span> <span class="built_in">Date</span>() &#125; &#125;</div><div class="line">           &#125;</div><div class="line">&#125; )</div></pre></td></tr></table></figure></p>
+<p><strong>原子操作常用命令</strong><br>$set<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//用来指定一个键并更新键值，若键不存在并创建。</span></div><div class="line">&#123; <span class="attr">$set</span> : &#123; <span class="string">"field"</span> : <span class="string">"value"</span> &#125; &#125;</div></pre></td></tr></table></figure></p>
+<p>$unset<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//用来删除一个键。</span></div><div class="line">&#123; <span class="attr">$unset</span> : &#123; <span class="attr">field</span> : <span class="number">1</span>&#125; &#125;</div></pre></td></tr></table></figure></p>
+<p>$inc<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//$inc可以对文档的某个值为数字型（只能为满足要求的数字）的键进行增减的操作。</span></div><div class="line">&#123; <span class="attr">$inc</span> : &#123; <span class="attr">field</span> : value &#125; &#125;</div></pre></td></tr></table></figure></p>
+<p>$push<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//用法：</span></div><div class="line">&#123; <span class="attr">$push</span> : &#123; <span class="attr">field</span> : value &#125; &#125;</div><div class="line"><span class="comment">//把value追加到field里面去，field一定要是数组类型才行，如果field不存在，会新增一个数组类型加进去。</span></div></pre></td></tr></table></figure></p>
+<p>$pushAll<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//同$push,只是一次可以追加多个值到一个数组字段内。</span></div><div class="line">&#123; <span class="attr">$pushAll</span> : &#123; <span class="attr">field</span> : value_array &#125; &#125;</div></pre></td></tr></table></figure></p>
+<p>$pull<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//从数组field内删除一个等于value值。</span></div><div class="line">&#123; <span class="attr">$pull</span> : &#123; <span class="attr">field</span> : _value &#125; &#125;</div></pre></td></tr></table></figure></p>
+<p>$addToSet<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//增加一个值到数组内，而且只有当这个值不在数组内才增加。</span></div></pre></td></tr></table></figure></p>
+<p>$pop<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//删除数组的第一个或最后一个元素</span></div><div class="line">&#123; <span class="attr">$pop</span> : &#123; <span class="attr">field</span> : <span class="number">1</span> &#125; &#125;</div></pre></td></tr></table></figure></p>
+<p>$rename<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//修改字段名称</span></div><div class="line">&#123; <span class="attr">$rename</span> : &#123; <span class="attr">old_field_name</span> : new_field_name &#125; &#125;</div></pre></td></tr></table></figure></p>
+<p>$bit<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//位操作，integer类型</span></div><div class="line">&#123;<span class="attr">$bit</span> : &#123; <span class="attr">field</span> : &#123;<span class="attr">and</span> : <span class="number">5</span>&#125;&#125;&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="MongoDB-Map-Reduce"><a href="#MongoDB-Map-Reduce" class="headerlink" title="MongoDB Map Reduce"></a>MongoDB Map Reduce</h4><h4 id="MongoDB-全文检索"><a href="#MongoDB-全文检索" class="headerlink" title="MongoDB 全文检索"></a>MongoDB 全文检索</h4><h4 id="MongoDB-GridFS"><a href="#MongoDB-GridFS" class="headerlink" title="MongoDB GridFS"></a>MongoDB GridFS</h4><p>GridFS 用于存储和恢复那些超过16M（BSON文件限制）的文件(如：图片、音频、视频等)。<br>GridFS 也是文件存储的一种方式，但是它是存储在MonoDB的集合中。<br>GridFS 可以更好的存储大于16M的文件。<br>GridFS 会将大文件对象分割成多个小的chunk(文件片段),一般为256k/个,每个chunk将作为MongoDB的一个文档(document)被存储在chunks集合中。<br>GridFS 用两个集合来存储一个文件：fs.files与fs.chunks。<br>每个文件的实际内容被存在chunks(二进制数据)中,和文件有关的meta数据(filename,content_type,还有用户自定义的属性)将会被存在files集合中。  </p>
+<p><strong>GridFS 添加文件</strong><br>现在我们使用 GridFS 的 put 命令来存储 mp3 文件。 调用 MongoDB 安装目录下bin的 mongofiles.exe工具。<br>打开命令提示符，进入到MongoDB的安装目录的bin目录中，找到mongofiles.exe，并输入下面的代码：<br><code>&gt;mongofiles.exe -d gridfs put song.mp3</code><br>GridFS 是存储文件的数据名称。如果不存在该数据库，MongoDB会自动创建。Song.mp3 是音频文件名。<br>使用以下命令来查看数据库中文件的文档：<br><code>&gt;db.fs.files.find()</code><br>以上命令执行后返回以下文档数据：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">   <span class="attr">_id</span>: ObjectId(<span class="string">'534a811bf8b4aa4d33fdf94d'</span>),</div><div class="line">   <span class="attr">filename</span>: <span class="string">"song.mp3"</span>,</div><div class="line">   <span class="attr">chunkSize</span>: <span class="number">261120</span>,</div><div class="line">   <span class="attr">uploadDate</span>: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1397391643474</span>), <span class="attr">md5</span>: <span class="string">"e4f53379c909f7bed2e9d631e15c1c41"</span>,</div><div class="line">   <span class="attr">length</span>: <span class="number">10401959</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>我们可以看到 fs.chunks 集合中所有的区块，以下我们得到了文件的 _id 值，我们可以根据这个 _id 获取区块(chunk)的数据：<br><code>&gt;db.fs.chunks.find({files_id:ObjectId(&#39;534a811bf8b4aa4d33fdf94d&#39;)})</code><br>以上实例中，查询返回了 40 个文档的数据，意味着mp3文件被存储在40个区块中。</p>
+<h3 id="优化建议"><a href="#优化建议" class="headerlink" title="优化建议"></a>优化建议</h3><hr>
+<ul>
+<li>在查询条件、排序条件、统计条件的字段上选择创建索引，可以显著提高查询效率。</li>
+<li>用$or时把匹配最多结果的条件放在最前面，用$and时把匹配最 少 结果的条件放在最前面。</li>
+<li>使用limit()限定返回结果集的大小，减少数据库服务器的资源消耗，以及网络传输的数据量。</li>
+<li>尽量不用模糊匹配查询，用其它精确匹配查询代替，比如$in、$nin。</li>
+<li>MongoDB的智能查询优化，判断粒度为query条件，而skip和limit都不在其判断之中，当分页查询最后几页时，先用order反向排序。</li>
+<li>只查询要使用的字段，而不查询所有字段。</li>
+<li>更新字段的值时，使用$inc比update效率高。</li>
+<li>capped collections比普通collections的读写效率高。</li>
+<li>必要时使用hint()强制使用某个索引查询。</li>
+<li>使用explain，根据exlpain plan进行优化。</li>
+<li>范围查询的时候尽量用$in、$nin代替。</li>
+<li>查看数据库查询日志，具体分析的效率低的操作。</li>
+<li>mongodb有一个数据库优化工具database profiler，能够检测数据库操作的性能。可以发现query或者write操作中执行效率低的，从而针对这些操作进行优化。</li>
+</ul>
+<h3 id="常用脚本"><a href="#常用脚本" class="headerlink" title="常用脚本"></a>常用脚本</h3><hr>
+<ul>
+<li><p>去重复的脚本</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">db.b_doctor.aggregate([</div><div class="line">	&#123; <span class="attr">$group</span>: &#123;<span class="string">"_id"</span>: &#123; <span class="string">"doctorNum"</span> : <span class="string">"$doctorNum"</span>, <span class="string">"name"</span>: <span class="string">"$name"</span>&#125;,<span class="string">"countAll"</span>:&#123;<span class="attr">$sum</span>:<span class="number">1</span>&#125;,<span class="string">"dups"</span>:&#123;<span class="attr">$addToSet</span>: <span class="string">'$_id'</span>&#125; &#125;&#125;,</div><div class="line">	&#123; <span class="attr">$match</span>:&#123; <span class="string">"countAll"</span>:&#123;<span class="attr">$gt</span>:<span class="number">1</span>&#125;&#125;&#125;]).forEach(<span class="function"><span class="keyword">function</span>(<span class="params">doc</span>)</span>&#123;</div><div class="line">    doc.dups.shift();</div><div class="line">    db.b_doctor.remove(&#123;<span class="attr">_id</span>: &#123;<span class="attr">$in</span>: doc.dups&#125;&#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>同步表中的数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">db.t_qa_question_hot.find(&#123;<span class="string">"questionType"</span>:&#123;<span class="attr">$exists</span>:<span class="literal">false</span>&#125;&#125;).forEach(<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> cursor = db.t_qa_question.find(&#123;<span class="string">"_id"</span>: ObjectId(x.questionId)&#125;);</div><div class="line">    <span class="keyword">if</span>(cursor.hasNext())&#123;</div><div class="line">        <span class="keyword">var</span> q = cursor.next();</div><div class="line">        db.t_qa_question_hot.update(&#123;<span class="string">"_id"</span>: x._id&#125;, &#123;</div><div class="line">            <span class="attr">$set</span>:&#123;<span class="string">"questionType"</span> : NumberInt(q.type),<span class="string">"questionCreator"</span>:q.userId&#125;&#125;,<span class="literal">false</span>,<span class="literal">true</span>)</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><hr>
+<ul>
+<li><a href="https://www.mongodb.com/" target="_blank" rel="external">官网</a></li>
+<li><a href="http://www.runoob.com/mongodb/mongodb-tutorial.html" target="_blank" rel="external">runoob.com &gt;&gt; MongoDB 教程</a><br>-</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mongodb/" rel="tag">#mongodb</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/28/U盘安装grub2引导PE和LinuxLive/" rel="next" title="U盘安装grub2引导PE和LinuxLive">
+                <i class="fa fa-chevron-left"></i> U盘安装grub2引导PE和LinuxLive
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+
+        
+
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <!--
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+          -->
+        </ul>
+      
+
+      <!--
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="耿超" />
+          <p class="site-author-name" itemprop="name">耿超</p>
+          <p class="site-description motion-element" itemprop="description">Talk is cheap,Show me the code!</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+      -->
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NoSQL和SQL"><span class="nav-number">1.2.</span> <span class="nav-text">NoSQL和SQL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用场景"><span class="nav-number">1.3.</span> <span class="nav-text">使用场景</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ubuntu安装"><span class="nav-number">2.1.</span> <span class="nav-text">ubuntu安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基础操作"><span class="nav-number">3.</span> <span class="nav-text">基础操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-连接"><span class="nav-number">3.1.</span> <span class="nav-text">MongoDB - 连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-数据库操作"><span class="nav-number">3.2.</span> <span class="nav-text">MongoDB 数据库操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据导入导出和备份"><span class="nav-number">3.3.</span> <span class="nav-text">数据导入导出和备份</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ObjectId"><span class="nav-number">3.4.</span> <span class="nav-text">ObjectId</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-插入文档"><span class="nav-number">3.5.</span> <span class="nav-text">MongoDB  插入文档</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-更新文档"><span class="nav-number">3.6.</span> <span class="nav-text">MongoDB 更新文档</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-删除文档"><span class="nav-number">3.7.</span> <span class="nav-text">MongoDB 删除文档</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-查询文档"><span class="nav-number">3.8.</span> <span class="nav-text">MongoDB 查询文档</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-正则表达式"><span class="nav-number">3.9.</span> <span class="nav-text">MongoDB 正则表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-条件操作符"><span class="nav-number">3.10.</span> <span class="nav-text">MongoDB 条件操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-type-操作符"><span class="nav-number">3.11.</span> <span class="nav-text">MongoDB $type 操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB简单查询操作符"><span class="nav-number">3.12.</span> <span class="nav-text">MongoDB简单查询操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-Limit与Skip方法"><span class="nav-number">3.13.</span> <span class="nav-text">MongoDB Limit与Skip方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-排序"><span class="nav-number">3.14.</span> <span class="nav-text">MongoDB 排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-索引"><span class="nav-number">3.15.</span> <span class="nav-text">MongoDB 索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-聚合"><span class="nav-number">3.16.</span> <span class="nav-text">MongoDB 聚合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-原子操作"><span class="nav-number">3.17.</span> <span class="nav-text">MongoDB 原子操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-Map-Reduce"><span class="nav-number">3.18.</span> <span class="nav-text">MongoDB Map Reduce</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-全文检索"><span class="nav-number">3.19.</span> <span class="nav-text">MongoDB 全文检索</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-GridFS"><span class="nav-number">3.20.</span> <span class="nav-text">MongoDB GridFS</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化建议"><span class="nav-number">4.</span> <span class="nav-text">优化建议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用脚本"><span class="nav-number">5.</span> <span class="nav-text">常用脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <!--
+    <i class="fa fa-heart"></i>
+    -->
+    by
+  </span>
+  <span class="author" itemprop="copyrightHolder">耿超</span>
+</div>
+
+<!--
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+-->
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>
