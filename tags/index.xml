@@ -6,9 +6,19 @@
     <description>Recent content in Tags on catchance</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 03 Jul 2017 10:13:45 +0800</lastBuildDate>
     
 	<atom:link href="http://catchance.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>mongodb</title>
+      <link>http://catchance.github.io/tags/mongodb/</link>
+      <pubDate>Mon, 03 Jul 2017 10:13:45 +0800</pubDate>
+      
+      <guid>http://catchance.github.io/tags/mongodb/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

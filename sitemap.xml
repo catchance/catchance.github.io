@@ -2,19 +2,9 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>http://catchance.github.io/about/</loc>
+      <loc>http://catchance.github.io/categories/</loc>
       
-      <lastmod>2016-10-02T00:56:45+00:00</lastmod>
-      
-      
-      
-      
-    </url>
-  
-    <url>
-      <loc>http://catchance.github.io/</loc>
-      
-      <lastmod>2016-10-02T00:56:45+00:00</lastmod>
+      <lastmod>2017-07-03T10:13:45+08:00</lastmod>
       
       
       
@@ -24,7 +14,9 @@
     </url>
   
     <url>
-      <loc>http://catchance.github.io/categories/</loc>
+      <loc>http://catchance.github.io/posts/</loc>
+      
+      <lastmod>2017-07-03T10:13:45+08:00</lastmod>
       
       
       
@@ -36,9 +28,67 @@
     <url>
       <loc>http://catchance.github.io/tags/</loc>
       
+      <lastmod>2017-07-03T10:13:45+08:00</lastmod>
+      
       
       
       <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://catchance.github.io/</loc>
+      
+      <lastmod>2017-07-03T10:13:45+08:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://catchance.github.io/categories/mongodb/</loc>
+      
+      <lastmod>2017-07-03T10:13:45+08:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://catchance.github.io/tags/mongodb/</loc>
+      
+      <lastmod>2017-07-03T10:13:45+08:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://catchance.github.io/2017/mongodb/</loc>
+      
+      <lastmod>2017-07-03T10:13:45+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://catchance.github.io/about/</loc>
+      
+      <lastmod>2016-10-02T00:56:45+00:00</lastmod>
+      
+      
       
       
     </url>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mongodb on catchance</title>
+    <link>http://catchance.github.io/tags/mongodb/</link>
+    <description>Recent content in mongodb on catchance</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 Jul 2017 10:13:45 +0800</lastBuildDate>
+    
+	<atom:link href="http://catchance.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>mongodb</title>
+      <link>http://catchance.github.io/2017/mongodb/</link>
+      <pubDate>Mon, 03 Jul 2017 10:13:45 +0800</pubDate>
+      
+      <guid>http://catchance.github.io/2017/mongodb/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;mongodb基础知识、概念、与关系数据库的对比&lt;br /&gt;
+mongodb shell命令操作语法，控制台底层的查询语句都是用javascript脚本完成操作
+java对于mongodb操作的方式：spring boot、morphia
+使用示例和js脚本&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
